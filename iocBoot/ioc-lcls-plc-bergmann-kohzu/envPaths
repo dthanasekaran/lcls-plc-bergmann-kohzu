@@ -1,0 +1,2 @@
+epicsEnvSet("IOC_TOP", "/c/Users/divya/Documents/lcls-plc-bergmann-kohzu/iocBoot/ioc-lcls-plc-bergmann-kohzu")
+epicsEnvSet("IOC_DATA", "/cds/data/iocData")
