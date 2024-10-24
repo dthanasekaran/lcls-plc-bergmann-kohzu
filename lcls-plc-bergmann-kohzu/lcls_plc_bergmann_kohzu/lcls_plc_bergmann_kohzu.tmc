@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{B8EF5A39-F098-147F-0084-ED3B40E33648}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{7BCB163E-3CF3-C80B-BD79-585DF2FD0ED1}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_System">T_AmsNetID</Name>
@@ -23723,7 +23723,7 @@ contributing fast faults, unless the FFO is currently vetoed.
       <SubItem>
         <Name>Width</Name>
         <Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-        <Comment> distance between horizontal slits (x)</Comment>
+        <Comment>distance between horizontal slits (x)</Comment>
         <BitSize>32</BitSize>
         <BitOffs>0</BitOffs>
         <Properties>
@@ -23738,7 +23738,7 @@ contributing fast faults, unless the FFO is currently vetoed.
       <SubItem>
         <Name>Height</Name>
         <Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-        <Comment> distance between vertical slits (y)</Comment>
+        <Comment>distance between vertical slits (y)</Comment>
         <BitSize>32</BitSize>
         <BitOffs>32</BitOffs>
         <Properties>
@@ -23753,7 +23753,7 @@ contributing fast faults, unless the FFO is currently vetoed.
       <SubItem>
         <Name>xOK</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <Comment> status of aperture, false if error or in motion</Comment>
+        <Comment>status of aperture, false if error or in motion</Comment>
         <BitSize>8</BitSize>
         <BitOffs>64</BitOffs>
         <Properties>
@@ -58165,7 +58165,7 @@ SAMPLE_Y
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CXI:BERGMANN:MMS:SAMPLE_Y</Value>
+                <Value>pv: CXI:BERGMANN:MMS:XTAL1_CHI</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -58185,7 +58185,7 @@ SAMPLE_Y
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CXI:BERGMANN:MMS:XTAL1_X</Value>
+                <Value>pv: CXI:BERGMANN:MMS:XTAL2_TH</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -58205,7 +58205,7 @@ SAMPLE_Y
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CXI:BERGMANN:MMS:XTAL1_CHI</Value>
+                <Value>pv: CXI:BERGMANN:MMS:XTAL1_CHI_OLD_BROKEN</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -58263,7 +58263,7 @@ SAMPLE_Y
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CXI:BERGMANN:MMS:XTAL2_TH</Value>
+                <Value>pv: CXI:BERGMANN:MMS:XTAL1_X</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -59109,7 +59109,7 @@ SAMPLE_Y
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-22T15:23:39</Value>
+          <Value>2024-10-23T16:41:25</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

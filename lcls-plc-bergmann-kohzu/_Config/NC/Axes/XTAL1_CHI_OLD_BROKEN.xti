@@ -1315,14 +1315,16 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="1" CreateSymbols="true" AxisType="1">
+	<Axis Id="3" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Velo RefSearch="3" RefSync="3" SlowManual="1" FastManual="3" Maximum="1"/>
-			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="3" PulseDistanceNeg="3"/>
+			<General UnitName="Degree"/>
+			<Dynamic AccelerationMaximum="75" DecelerationMaximum="75" Acceleration="7.5" Deceleration="7.5" Jerk="11.25"/>
+			<Velo RefSearch="0.6" RefSync="0.6" SlowManual="0.4" FastManual="0.6" Fast="1" Maximum="15.6"/>
+			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="1" PulseDistanceNeg="1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="7.8125e-06" Inverse="true" MaxCount="#x0000ffff">
+			<EncPara ScaleFactorNumerator="0.000121875" MaxCount="#x0000ffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1382,8 +1384,8 @@ External Setpoint Generation:
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
-			<DrvPara Inverse="true">
-				<Analog VeloReferenz="1" ScaleFactorActTorque="0.1"/>
+			<DrvPara>
+				<Analog VeloReferenz="15.6" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1476,7 +1478,7 @@ External Setpoint Generation:
 	</Axis>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^EL7041_BERG_XTAL_SAMPLE_Y">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^EL7041_BERG_XTAL1_CHI_OLD">
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>

@@ -6,21 +6,21 @@ VAR
     //declare motion stage objects to connect with io
     //SAMPLE_Y
     //{attribute 'pytmc' := 'pv: HXX:HXSS:ROV:MMS:ALL_H'}
-    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:SAMPLE_Y'}
+    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL1_CHI'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E2 (EL1088)^Channel 1^Input;
                               .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E2 (EL1088)^Channel 3^Input
     '}
     M1 : ST_MotionStage;
     //XTAL1_X
     //{attribute 'pytmc' := 'pv: HXX:HXSS:ROV:MMS:ALL_V'}
-    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL1_X'}
+    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL2_TH'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E2 (EL1088)^Channel 4^Input;
                               .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E2 (EL1088)^Channel 2^Input
     '}
     M2 : ST_MotionStage;
     //XTAL1_CHI
     //{attribute 'pytmc' := 'pv: HXX:HXSS:ROV:MMS:XTAL_TH'}
-    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL1_CHI'}
+    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL1_CHI_OLD_BROKEN'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E5 (EL1088)^Channel 3^Input;
                               .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E5 (EL1088)^Channel 1^Input
     '}
@@ -41,7 +41,7 @@ VAR
     M5 : ST_MotionStage;
     //XTAL2_TH
     //{attribute 'pytmc' := 'pv: HXX:HXSS:ROV:MMS:XTAL_V'}
-    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL2_TH'}
+    {attribute 'pytmc' := 'pv: CXI:BERGMANN:MMS:XTAL1_X'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL1088)^Channel 4^Input;
                               .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL1088)^Channel 2^Input
     '}

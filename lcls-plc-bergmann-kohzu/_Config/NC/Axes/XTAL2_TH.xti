@@ -1315,11 +1315,12 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="6" CreateSymbols="true" AxisType="1">
+	<Axis Id="2" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<General UnitName="Degree"/>
-			<Velo RefSearch="0.2" RefSync="0.2" SlowManual="0.1" FastManual="0.2" Maximum="0.2"/>
+			<Dynamic AccelerationMaximum="75" DecelerationMaximum="75" Acceleration="7.5" Deceleration="7.5" Jerk="10"/>
+			<Velo RefSearch="0.2" RefSync="0.2" SlowManual="0.1" FastManual="0.2" Maximum="0.5"/>
 			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="0.2" PulseDistanceNeg="0.2"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
