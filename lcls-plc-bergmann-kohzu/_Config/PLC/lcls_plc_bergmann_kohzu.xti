@@ -1510,13 +1510,13 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="Channel 4^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_CHI">
+				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_CHI_OLD">
 				<Link VarA="PlcTask Inputs^Main.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_Chi">
-				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^Main.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_TH">
 				<Link VarA="PlcTask Inputs^Main.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
