@@ -18,7 +18,7 @@
 		</SvbTask>
 		<Axis File="XTAL1_Chi.xti" Id="1"/>
 		<Axis File="XTAL2_TH.xti" Id="2"/>
-		<Axis File="XTAL1_CHI_OLD_BROKEN.xti" Id="3"/>
+		<Axis File="XTAL1_CHI_OLD.xti" Id="3"/>
 		<Axis File="XTAL1_TH.xti" Id="4"/>
 		<Axis File="XTAL2_CHI.xti" Id="5"/>
 		<Axis File="XTAL1_X.xti" Id="6"/>

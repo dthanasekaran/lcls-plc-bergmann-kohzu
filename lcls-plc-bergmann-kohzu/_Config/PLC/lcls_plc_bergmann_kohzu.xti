@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{44676886-0CF6-44B8-AD68-DC81A776C3EE}" Name="lcls_plc_bergmann_kohzu" PrjFilePath="..\..\lcls_plc_bergmann_kohzu\lcls_plc_bergmann_kohzu.plcproj" TmcFilePath="..\..\lcls_plc_bergmann_kohzu\lcls_plc_bergmann_kohzu.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="lcls_plc_bergmann_kohzu\lcls_plc_bergmann_kohzu.tmc" TmcHash="{7BCB163E-3CF3-C80B-BD79-585DF2FD0ED1}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="lcls_plc_bergmann_kohzu\lcls_plc_bergmann_kohzu.tmc" TmcHash="{37271DCA-9B82-4D79-20C0-21C101FE32A4}">
 			<Name>lcls_plc_bergmann_kohzu Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1510,7 +1510,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="Channel 4^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_CHI_OLD_BROKEN">
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^XTAL1_CHI_OLD">
 				<Link VarA="PlcTask Inputs^Main.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>

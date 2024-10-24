@@ -8,9 +8,8 @@
 #    Project hash: unknown
 #     PLC IP/host: 172.21.68.129
 #      PLC Net ID: 172.21.68.129.1.1
-# ** DEVELOPMENT MODE IOC **
-# * Using IOC boot directory for autosave.
-# * Archiver settings will not be configured.
+#  ** Production mode IOC **
+#  Using /cds/data/iocData for autosave and archiver settings.
 #
 # Libraries:
 #
@@ -28,6 +27,9 @@ epicsEnvSet("ENGINEER", "" )
 epicsEnvSet("LOCATION", "PLC:lcls_plc_bergmann_kohzu" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
+
+# Run common startup commands for linux soft IOC's
+< /reg/d/iocCommon/All/pre_linux.cmd
 
 # Register all support components
 dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
@@ -109,9 +111,9 @@ asynSetTraceInfoMask("$(ASYN_PORT)", -1, 5)
 
 epicsEnvSet("AXIS_NO",         "1")
 epicsEnvSet("MOTOR_PREFIX",    "CXI:BERGMANN:MMS:")
-epicsEnvSet("MOTOR_NAME",      "SAMPLE_Y")
-epicsEnvSet("DESC",            "Main.M1 / XTAL_SAMPLE_Y")
-epicsEnvSet("EGU",             "mm")
+epicsEnvSet("MOTOR_NAME",      "XTAL1_CHI")
+epicsEnvSet("DESC",            "Main.M1 / XTAL1_Chi")
+epicsEnvSet("EGU",             "Degree")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
 epicsEnvSet("ECAXISFIELDINIT", "")
@@ -124,9 +126,9 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "2")
 epicsEnvSet("MOTOR_PREFIX",    "CXI:BERGMANN:MMS:")
-epicsEnvSet("MOTOR_NAME",      "XTAL1_X")
-epicsEnvSet("DESC",            "Main.M2 / XTAL1_X")
-epicsEnvSet("EGU",             "mm")
+epicsEnvSet("MOTOR_NAME",      "XTAL2_TH")
+epicsEnvSet("DESC",            "Main.M2 / XTAL2_TH")
+epicsEnvSet("EGU",             "Degree")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
 epicsEnvSet("ECAXISFIELDINIT", "")
@@ -139,8 +141,8 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "3")
 epicsEnvSet("MOTOR_PREFIX",    "CXI:BERGMANN:MMS:")
-epicsEnvSet("MOTOR_NAME",      "XTAL1_CHI")
-epicsEnvSet("DESC",            "Main.M3 / XTAL1_CHI")
+epicsEnvSet("MOTOR_NAME",      "XTAL1_CHI_OLD")
+epicsEnvSet("DESC",            "Main.M3 / XTAL1_CHI_OLD")
 epicsEnvSet("EGU",             "Degree")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -170,7 +172,7 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 epicsEnvSet("AXIS_NO",         "5")
 epicsEnvSet("MOTOR_PREFIX",    "CXI:BERGMANN:MMS:")
 epicsEnvSet("MOTOR_NAME",      "XTAL2_CHI")
-epicsEnvSet("DESC",            "Main.M5 / XTA2L_CHI")
+epicsEnvSet("DESC",            "Main.M5 / XTAL2_CHI")
 epicsEnvSet("EGU",             "Degree")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
@@ -184,9 +186,9 @@ dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(
 
 epicsEnvSet("AXIS_NO",         "6")
 epicsEnvSet("MOTOR_PREFIX",    "CXI:BERGMANN:MMS:")
-epicsEnvSet("MOTOR_NAME",      "XTAL2_TH")
-epicsEnvSet("DESC",            "Main.M6 / XTA2L_TH")
-epicsEnvSet("EGU",             "Degree")
+epicsEnvSet("MOTOR_NAME",      "XTAL1_X")
+epicsEnvSet("DESC",            "Main.M6 / XTAL1_X")
+epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
 epicsEnvSet("AXISCONFIG",      "")
 epicsEnvSet("ECAXISFIELDINIT", "")
@@ -262,14 +264,21 @@ save_restoreSet_DatedBackupFiles(1)
 set_pass0_restoreFile("info_positions.sav")
 set_pass1_restoreFile("info_settings.sav")
 
-# ** Development IOC Settings **
-# Development IOC autosave and archive files go in the IOC top directory:
-cd "$(IOC_TOP)"
+# ** Production IOC Settings **
+set_savefile_path("$(IOC_DATA)/$(IOC)/autosave")
+set_requestfile_path("$(IOC_DATA)/$(IOC)/autosave")
 
-# (Development mode) Create info_positions.req and info_settings.req
+# Production IOC autosave files go in iocData:
+cd "$(IOC_DATA)/$(IOC)/autosave"
+
+# Create info_positions.req and info_settings.req
 makeAutosaveFiles()
-# (Development mode) Create the archiver file
+
+cd "$(IOC_DATA)/$(IOC)/archive"
+
+# Create $(IOC).archive
 makeArchiveFromDbInfo("$(IOC).archive", "archive")
+cd "$(IOC_TOP)"
 
 # Configure access security: this is required for caPutLog.
 asSetFilename("$(ACF_FILE)")
@@ -294,4 +303,7 @@ caPutLogInit("$(EPICS_CAPUTLOG_HOST):$(EPICS_CAPUTLOG_PORT)", 0)
 # Start autosave backups
 create_monitor_set( "info_positions.req", 10, "" )
 create_monitor_set( "info_settings.req", 60, "" )
+
+# All IOCs should dump some common info after initial startup.
+< /reg/d/iocCommon/All/post_linux.cmd
 

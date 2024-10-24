@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{7BCB163E-3CF3-C80B-BD79-585DF2FD0ED1}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{37271DCA-9B82-4D79-20C0-21C101FE32A4}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_System">T_AmsNetID</Name>
@@ -58205,7 +58205,7 @@ SAMPLE_Y
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CXI:BERGMANN:MMS:XTAL1_CHI_OLD_BROKEN</Value>
+                <Value>pv: CXI:BERGMANN:MMS:XTAL1_CHI_OLD</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -59109,7 +59109,7 @@ SAMPLE_Y
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-23T16:41:25</Value>
+          <Value>2024-10-24T15:22:09</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
